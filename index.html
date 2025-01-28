@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- REQUIREMENTS -->
+    <!-- 1. Build from scratch -->
+    <!-- Gernerate two random passwords when the user clicks the button -->
+    <!-- Each password should be 15 characters long -->
+
+    <!-- STRETCH GOALS -->
+    <!-- Set password length -->
+    <!-- Add "Copy on click" -->
+    <!-- Toggle symbols and numbers on/off -->
+
+    <main class="main">
+      <section class="password-generator">
+        <h1 class="password-title">
+          Generate a
+          <span class="password-title--accent">random password</span>
+        </h1>
+        <h2 class="password-desc">Never use an insecure password again.</h2>
+        <button class="generate-btn">Generate passwords</button>
+        <hr />
+        <div class="passwords">
+          <p type="text" id="pass1-el">>nfJjy!dDvR&ial</p>
+          <p type="text" id="pass2-el">>nfJjy!dDvR&ial</p>
+        </div>
+        <div class="copytext">
+          <button id="copy1-el" onclick="copyTextToClipboard()">
+            Copy Text
+          </button>
+          <button id="copy2-el">Copy Text</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
