@@ -178,6 +178,8 @@ button {
       margin-bottom: 15px;
       border-radius: 6px;
       color: var(--accent-password);
+      width: 210px;
+      height: 45px;
     }
 
     #pass1-el {
@@ -197,7 +199,7 @@ button {
     }
 
     #copy1-el {
-      margin-right: 4.5rem;
+      margin-right: 7.5rem;
     }
   }
 }
