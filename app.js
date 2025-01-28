@@ -92,59 +92,39 @@ const characters = [
   "/",
 ];
 
-// const textToCopy = "This text will be copied!";
-// let textEl = document.getElementById("copy1-el");
+// Copy Passwords
+const button1 = document.getElementById("copy1-el");
+const button2 = document.getElementById("copy2-el");
 
-// function copyTextToClipboard() {
-//   var copyText = document.getElementById("copy1-el");
+const toCopy1 = document.getElementById("pass1-el");
+const toCopy2 = document.getElementById("pass2-el");
 
-//   copyText.select();
-//   //textEl.setSelectionRange(0, 99999);
+let button1Clicked = false;
+let button2Clicked = false;
 
-//   navigator.clipboard.writeText(copyText.value);
-
-//   alert("Copied the text: " + copyText.value);
-// }
-// copyTextToClipboard(textToCopy);
-
-function copyTextToClipboard() {
-  let copyText = document.getElementById("pass1-el");
-
-  // Get the text content, handling different element types
-  let textToCopy = copyText;
-  let subTextToCopy = copyTextTwo;
-  if (copyText) {
-    textToCopy = copyText.textContent || copyText.innerText || ""; // Handle different ways text is stored
-  } else {
-    console.error("Element not found.");
-    return; // Exit the function if the element doesn't exist
+button1.addEventListener("click", () => {
+  button1Clicked = true;
+  if (button1Clicked) {
+    copyToClipboard(toCopy1.textContent);
+    button1Clicked = false; // Reset flag
   }
+});
 
+button2.addEventListener("click", () => {
+  button2Clicked = true;
+  if (button2Clicked) {
+    copyToClipboard(toCopy2.textContent);
+    button2Clicked = false;
+  }
+});
+
+function copyToClipboard(text) {
   navigator.clipboard
-    .writeText(textToCopy)
+    .writeText(text)
     .then(() => {
-      alert("Copied the text: " + textToCopy);
+      alert("Text copied!");
     })
     .catch((err) => {
       console.error("Failed to copy: ", err);
-      alert("Failed to copy text. Please try again."); // Provide user feedback on failure
     });
-
-  //   let textToCopyTwo = copyTextTwo;
-  //   if (copyTextTwo) {
-  //     textToCopyTwo = copyTextTwo.textContent || copyTextTwo.innerText || ""; // Handle different ways text is stored
-  //   } else {
-  //     console.error("Element not found.");
-  //     return; // Exit the function if the element doesn't exist
-  //   }
-
-  //   navigator.clipboard
-  //     .writeText(textToCopyTwo)
-  //     .then(() => {
-  //       alert("Copied the text: " + textToCopyTwo);
-  //     })
-  //     .catch((err) => {
-  //       console.error("Failed to copy: ", err);
-  //       alert("Failed to copy text. Please try again."); // Provide user feedback on failure
-  //     });
 }
