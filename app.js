@@ -29,7 +29,7 @@ function copyToClipboard(text) {
   navigator.clipboard
     .writeText(text)
     .then(() => {
-      alert("Text copied!");
+      alert("Password copied!");
     })
     .catch((err) => {
       console.error("Failed to copy: ", err);
